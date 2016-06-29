@@ -4,11 +4,11 @@ local inspect = require("inspect")
 local function check(typ, value)
     typ = sc.checkType(typ)
     local name, expected, actual = typ("value", value)
-    
+
     if actual then
-      return false, table.concat({inspect(value),  "\n", name, " 应该为: ", expected , " 实为: ", actual})
+        return false, table.concat({inspect(value),  "\n", name, " 应该为: ", expected , " 实为: ", actual})
     else
-      return true
+        return true
     end
 end
 
